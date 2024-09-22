@@ -4,8 +4,7 @@ const urlsToCache = [
   '/index.html',
   '/Home/Home.css',
   '/Home/Toggle.js',
-  '/App/App_logo.png',
-  '/App/App_logo.png'
+  '/App/App_logo.png' // Removed duplicate entry
 ];
 
 // Install the service worker
