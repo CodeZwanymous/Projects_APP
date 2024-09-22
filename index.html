@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Library</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/Home/Home.css">
+    <link rel="stylesheet" href="/Home/Footer.css">
+    <link rel="stylesheet" href="/Home/Cookies.css">
+    <link rel="manifest" href="/menifest.json">
+</head>
+<body>
+    <header>
+        <div class="logo"><i class="fas fa-folder-open" style="color: white;"></i> My Projects</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/index.html"><i class="fas fa-home" id="h"></i> Home</a></li>
+                <li><a href="/Projects/Projects.html"><i class="fas fa-laptop-code"></i> Projects</a></li>
+                <li><a href="/Categories/ASAP.html"><i class="fas fa-list-alt" id="ct"></i> Categories</a></li>
+                <li><a href="/Contact/Contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                <div id="dis">
+<img src="/Home/Images/logo.jpeg" alt="" id="logo">
+<h1 id="h1">CodeZwanymous</h1>
+<p id="p">Welcome User</p>
+<i class="fas fa-close" id="cl"></i>
+<p id="p2">Subscribe to <a href="#">CodeZwanymous</a> on YouTube</p>
+</div>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search projects...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        
+       
+    </header>
+    <br>
+<!----Main------------->
+  <div class="library-container">
+    <div class="project-card">
+      <div class="icon-container">
+        <img src="/Home/Images/programming.jpg" alt="Project Icon" class="project-icon" style="width: 300px;">
+      </div>
+      <div class="project-info">
+        <h3 class="project-title">Modern Project Trailer</h3>
+        <p class="project-description">Welcome To The Library Of CodeZwanymous
+        <br><br>
+        
+        <span style="font-size: 15px;">- CodeZwanymous</span>
+        
+        </p>
+        <button class="project-button">
+          <i class="fas fa-eye"></i> View Project
+        </button>
+      </div>
+    </div>
+    <!-- Add more project cards as needed -->
+        <div class="project-card">
+      <div class="icon-container">
+        <img src="/Home/Images/What's_App.jpg" alt="Project Icon" class="project-icon" style="width: 300px;">
+      </div>
+      <div class="project-info">
+        <h3 class="project-title">What's App</h3>
+        <p class="project-description">A Sample of What's app Homepage with Html and Css
+          <br><br>
+
+          <span style="font-size: 15px;">- CodeZwanymous</span>
+
+        </p>
+        <button class="project-button">
+          <i class="fas fa-eye"></i> View Project
+        </button>
+      </div>
+    </div>
+    
+    
+    
+  </div><!--end div-->
+  <!--====Cookies===----->
+    <div class="cookie-consent" id="cookieConsent">
+      <p class="cookie-message">We use cookies to enhance your experience. Do you accept the use of cookies?</p>
+      <div class="cookie-buttons">
+        <button class="cookie-button" id="acceptCookies">
+          <i class="fas fa-check"></i> Accept
+        </button>
+        <button class="cookie-button" id="declineCookies" style="background-color: #DA6D6D;">
+          <i class="fas fa-times"></i> Decline
+        </button>
+      </div>
+    </div>
+  
+  <br><br>
+  <button id="installButton" style="display: none;">Install App</button>
+  <!--========FOOTER========--->
+    <footer class="footer">
+    <div class="footer-container">
+
+      
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 CodeZwanymous. All Rights Reserved. | <a href="/Privacy & Policy /P&P.html">Privacy Policy</a></p>
+      </div>
+    </div>
+  </footer>
+
+
+<script src="/Home/Toggle.js"></script>
+<script src="/Home/Hamburg.js"></script>
+<script src="/Home/Animation.js"></script>
+<script src="/Home/Cookies.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/App/service-worker.js')
+        .then(registration => {
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        })
+        .catch(error => {
+          console.log('ServiceWorker registration failed: ', error);
+        });
+    });
+  }
+</script>
+<script>
+  let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Prevent the mini-info bar from appearing on mobile
+  e.preventDefault();
+  // Stash the event so it can be triggered later
+  deferredPrompt = e;
+  
+  // Show your own install button (or message)
+  const installButton = document.getElementById('installButton');
+  installButton.style.display = 'block';
+
+  installButton.addEventListener('click', () => {
+    // Hide the button after the prompt is shown
+    installButton.style.display = 'none';
+    // Show the install prompt
+    deferredPrompt.prompt();
+    // Wait for the user to respond to the prompt
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User accepted the A2HS prompt');
+      } else {
+        console.log('User dismissed the A2HS prompt');
+      }
+      deferredPrompt = null;
+    });
+  });
+});
+</script>
+
+</body>
+</html>

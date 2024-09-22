@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Contact Me</title>
+  <link rel="stylesheet" href="/Contact/Contact.css">
+</head>
+<body>
+
+  <div class="contact-container">
+    <h2 class="contact-header">Contact Me</h2>
+    <form class="contact-form" id="myForm">
+      <!-- Name Field -->
+      <div class="form-group">
+        <input type="text" class="form-input" id="name" placeholder="Your Name" required>
+        <i class="fas fa-user"></i>
+      </div>
+      
+      <!-- Email Field -->
+      <div class="form-group">
+        <input type="email" class="form-input" id="email" placeholder="Your Email" required>
+        <i class="fas fa-envelope"></i>
+      </div>
+
+      <!-- Message Field -->
+      <div class="form-group">
+        <textarea class="form-input" id="message" rows="4" placeholder="Your Message" required style="Border-radius: 5px;"></textarea>
+        <i class="fas fa-comment-dots" style="margin-top: -58px; font-size: 19px;"></i>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="form-button" id="redirectBtn">
+        <i class="fas fa-paper-plane"></i> Send Message
+      </button>
+
+    </form>
+    
+    
+    
+    
+    
+                  <button class="project-button" style="margin-left: 0px; background-color: transparent; color: grey; border: none;
+                  padding: 12px 20px;
+                  font-size: 16px;
+                  font-weight: 600;
+                  border-radius: 50px;
+                  cursor: pointer;
+                  transition: background-color 0.3s, transform 0.3s;
+                  display: flex;
+                  align-items: center;
+                  gap: 10px; margin-top: 20px;">
+                    <a href="/index.html" style="color: grey; text-decoration: none;"><i class="fas fa-arrow-left"></i> Back</a>
+                  </button>
+  </div>
+
+<script src="/Contact/Contact.js"></script>
+
+</body>
+</html>
